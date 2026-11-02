@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, JetBrains_Mono, Courier_Prime } from "next/font/google";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
+import { SessionProvider } from "@/lib/session";
 import "./globals.css";
 
 // Same fonts as references/templates/Arcade Vault.html
@@ -35,7 +38,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <div className="av-bg" />
         <div className="av-noise" />
-        <div id="root">{children}</div>
+        <SessionProvider>
+          <div id="root">
+            <Nav />
+            <main className="av-main">{children}</main>
+            <Footer />
+          </div>
+        </SessionProvider>
       </body>
     </html>
   );
