@@ -21,3 +21,21 @@ npx skills@latest add Klerith/fernando-skills
 - `npm run build` / `npm run start` — production build / serve
 - `npm run lint` — ESLint (flat config, `eslint.config.mjs`)
 - No test runner configured.
+
+## Rutas
+
+| Ruta | Pantalla |
+| --- | --- |
+| `/` | Landing (hero, por qué, juegos, estadísticas, actividad, precios, CTA) |
+| `/biblioteca` | Biblioteca de juegos con búsqueda y filtro por categoría |
+| `/juegos/[id]` | Detalle del juego |
+| `/juegos/[id]/jugar` | Reproductor |
+| `/salon` | Salón de la Fama |
+| `/login` | Iniciar sesión / crear cuenta |
+
+Todo es visual y con datos simulados (sin backend).
+
+## Specs
+
+- `specs/01-maqueta-visual.md` — maqueta visual (biblioteca, detalle, reproductor, salón, login)
+- `specs/02-home-page.md` — landing en `/` y biblioteca movida a `/biblioteca`

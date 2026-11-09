@@ -1,6 +1,6 @@
 # SPEC 02 — Home page de Arcade Vault
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01
 > **Date:** 2026-11-08
 > **Objective:** Portar a Next.js la landing de `references/templates/home-about/home-about/home.jsx` como página `/`, mover la biblioteca a `/biblioteca` y agregar "Inicio" a la navbar, solo en su parte visual y con datos simulados.
@@ -81,20 +81,20 @@ Antes del paso 1: leer en `node_modules/next/dist/docs/01-app` las guías de Ser
 
 ## Criterios de aceptación
 
-- [ ] `npm run build` y `npm run lint` terminan con código 0.
-- [ ] `/` y `/biblioteca` cargan sin errores ni warnings de hidratación en la consola.
-- [ ] `/` muestra, en orden: hero (3 líneas de título), 4 tarjetas "¿Por qué?", 6 mini-tarjetas, 3 bloques de estadísticas, 7 filas de puntuaciones recientes, 5 filas de top jugadores, tarjeta de precios con 6 ítems y 3 preguntas de FAQ, y CTA final.
-- [ ] Las 8 siluetas del hero se renderizan y flotan; en `prefers-reduced-motion` no es obligatorio animarlas.
-- [ ] Las secciones con clase `reveal` aparecen (clase `in`) al entrar en el viewport.
-- [ ] EXPLORAR JUEGOS, VER TODOS LOS JUEGOS e INSERTAR MONEDA llevan a `/biblioteca`.
-- [ ] CREAR CUENTA y EMPEZAR GRATIS llevan a `/login`; VER SALÓN lleva a `/salon`.
-- [ ] Clic en una mini-tarjeta lleva a `/juegos/[id]` de ese juego.
-- [ ] `/biblioteca` conserva búsqueda, filtro por categoría y estado "NO HAY RESULTADOS" de SPEC 01.
-- [ ] La navbar muestra "Inicio" activo solo en `/`; "Biblioteca" activo en `/biblioteca`, `/juegos/*` y `/juegos/*/jugar`; "Salón de la Fama" en `/salon`.
-- [ ] El logo lleva a `/` y "Inicio" aparece también en el panel móvil (ancho ≤ 480 px).
-- [ ] "VOLVER AL VAULT" (detalle y reproductor) y "VOLVER A LA BIBLIOTECA" (salón) llevan a `/biblioteca`.
-- [ ] La landing no desborda horizontalmente a 375 px de ancho; el rail pasa a 3 columnas (≤ 1100 px) y a 2 (≤ 600 px).
-- [ ] El flujo de login de SPEC 01 sigue redirigiendo tras iniciar sesión (destino `/`).
+- [x] `npm run build` y `npm run lint` terminan con código 0.
+- [x] `/` y `/biblioteca` cargan sin errores ni warnings de hidratación en la consola.
+- [x] `/` muestra, en orden: hero (3 líneas de título), 4 tarjetas "¿Por qué?", 6 mini-tarjetas, 3 bloques de estadísticas, 7 filas de puntuaciones recientes, 5 filas de top jugadores, tarjeta de precios con 6 ítems y 3 preguntas de FAQ, y CTA final.
+- [x] Las 8 siluetas del hero se renderizan y flotan; en `prefers-reduced-motion` no es obligatorio animarlas.
+- [x] Las secciones con clase `reveal` aparecen (clase `in`) al entrar en el viewport.
+- [x] EXPLORAR JUEGOS, VER TODOS LOS JUEGOS e INSERTAR MONEDA llevan a `/biblioteca`.
+- [x] CREAR CUENTA y EMPEZAR GRATIS llevan a `/login`; VER SALÓN lleva a `/salon`.
+- [x] Clic en una mini-tarjeta lleva a `/juegos/[id]` de ese juego.
+- [x] `/biblioteca` conserva búsqueda, filtro por categoría y estado "NO HAY RESULTADOS" de SPEC 01.
+- [x] La navbar muestra "Inicio" activo solo en `/`; "Biblioteca" activo en `/biblioteca`, `/juegos/*` y `/juegos/*/jugar`; "Salón de la Fama" en `/salon`.
+- [x] El logo lleva a `/` y "Inicio" aparece también en el panel móvil (ancho ≤ 480 px).
+- [x] "VOLVER AL VAULT" (detalle y reproductor) y "VOLVER A LA BIBLIOTECA" (salón) llevan a `/biblioteca`.
+- [x] La landing no desborda horizontalmente a 375 px de ancho; el rail pasa a 3 columnas (≤ 1100 px) y a 2 (≤ 600 px).
+- [x] El flujo de login de SPEC 01 sigue redirigiendo tras iniciar sesión (destino `/`).
 
 ## Decisiones tomadas y descartadas
 
