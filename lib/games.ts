@@ -1,5 +1,4 @@
 export type GameCategory = "ARCADE" | "PUZZLE" | "SHOOTER" | "VERSUS";
-
 export type Game = {
   id: string;
   title: string;
@@ -11,8 +10,18 @@ export type Game = {
   best: number;
   plays: string;
 };
-
 export const GAMES: Game[] = [
+  {
+    id: "meteoro",
+    title: "METEORO",
+    short: "Esquiva y pulveriza meteoros en gravedad cero.",
+    long: "Tu nave flota en un campo de meteoros que no deja de crecer. Rota, propulsa y dispara para partirlos en fragmentos cada vez más pequeños. Atrapa el núcleo 3x para disparar en abanico.",
+    cat: "SHOOTER",
+    cover: "cover-meteoro",
+    color: "cyan",
+    best: 12500,
+    plays: "1.2K",
+  },
   {
     id: "bloque-buster",
     title: "BLOQUE BUSTER",
@@ -102,9 +111,7 @@ export const GAMES: Game[] = [
     plays: "4.2K",
   },
 ];
-
 export const CATS = ["TODOS", "ARCADE", "PUZZLE", "SHOOTER", "VERSUS"] as const;
-
 export function getGame(id: string): Game | undefined {
   return GAMES.find((g) => g.id === id);
 }
