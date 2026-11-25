@@ -1,16 +1,13 @@
 "use client";
-
 import { useRef } from "react";
 import type { Game } from "@/lib/games";
-
+import { isPlayable } from "@/components/games/registry";
 type Props = {
   game: Game;
   onSelect: (game: Game) => void;
 };
-
 export default function GameCard({ game, onSelect }: Props) {
   const tiltRef = useRef<HTMLDivElement>(null);
-
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const el = tiltRef.current;
     if (!el) return;
@@ -19,14 +16,16 @@ export default function GameCard({ game, onSelect }: Props) {
     const py = (e.clientY - r.top) / r.height - 0.5;
     el.style.transform = `translateY(-6px) rotateX(${-py * 6}deg) rotateY(${px * 8}deg)`;
   };
-
   const onLeave = () => {
     const el = tiltRef.current;
     if (el) el.style.transform = "";
   };
-
-  const btnColor = game.color === "magenta" ? "magenta" : game.color === "yellow" ? "yellow" : "";
-
+  const btnColor =
+    game.color === "magenta"
+      ? "magenta"
+      : game.color === "yellow"
+        ? "yellow"
+        : "";
   return (
     <div
       ref={tiltRef}
@@ -38,6 +37,7 @@ export default function GameCard({ game, onSelect }: Props) {
       <div className="cover">
         <div className={"cover-bg " + game.cover}></div>
         <div className="label">{game.cat}</div>
+        {isPlayable(game.id) && <div className="badge-playable">JUGABLE</div>}
       </div>
       <div className="meta">
         <div className="title">{game.title}</div>
